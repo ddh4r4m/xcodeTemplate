@@ -10,3 +10,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+
+## Bazel 
+
+### Building 
+❯ bazel build //xcodeSample:xcodeSample
+
+### Running
+❯ bazel run //xcodeSample:xcodeSample
