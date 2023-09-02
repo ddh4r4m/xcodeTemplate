@@ -6,5 +6,6 @@ target 'xcodeSample' do
   use_frameworks!
 
   # Pods for xcodeSample
+  pod 'Alamofire'
 
 end
