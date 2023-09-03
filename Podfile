@@ -9,3 +9,19 @@ target 'xcodeSample' do
   pod 'Alamofire'
 
 end
+
+post_install do |installer|
+  puts "Generating Pods.json"
+  development_pods = installer.sandbox.development_pods
+  mapped_pods = installer.analysis_result.specifications.reduce({}) { |result, spec|
+    result[spec.name] = {
+      name: spec.name,
+      podspec: "#{spec.defined_in_file.to_s}",
+      development_path: development_pods[spec.name]
+    }
+    result
+  }
+  File.open('Pods/Pods.json', 'w') { |file|
+    file.write(JSON.pretty_generate(mapped_pods))
+  }
+end

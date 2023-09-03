@@ -6,24 +6,24 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 final class NetworkManager {
     static let shared = NetworkManager()
     
     private init() {}
     
-//    func fetchDataFromAPI(completionHandler: @escaping (Result<DataT, Errors>)-> Void) {
-//        AF.request("https://jsonplaceholder.typicode.com/posts").responseDecodable(of: DataT.self, completionHandler: { response in
-//            debugPrint(response)
-//            switch response.result {
-//            case .success(let data):
-//                completionHandler(.success(data))
-//            case .failure:
-//                completionHandler(.failure(.invalidData))
-//            }
-//        })
-//    }
+    func fetchDataFromAPI(completionHandler: @escaping (Result<DataT, Errors>)-> Void) {
+        AF.request("https://jsonplaceholder.typicode.com/posts").responseDecodable(of: DataT.self, completionHandler: { response in
+            debugPrint(response)
+            switch response.result {
+            case .success(let data):
+                completionHandler(.success(data))
+            case .failure:
+                completionHandler(.failure(.invalidData))
+            }
+        })
+    }
     
     func fetchDataFromAPIUsingURLSession(completionHandler: @escaping (Result<DataT, Errors>)-> Void) {
         URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)) { data, response, err in

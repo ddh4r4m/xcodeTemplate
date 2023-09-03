@@ -22,15 +22,25 @@ swift_library(
     name = "SwiftLibrary",
     srcs = glob([
         "*.swift",
+        "**/*.swift"
     ]),
     data = glob([
         "*.xcassets/**/*",
         "*.lproj/**/*",
     ]),
     module_name = "xcodeSample",
+    deps = ["//Pods/Alamofire"],
     tags = ["manual"],
     visibility = ["//visibility:public"],
 )
+
+# swift_library(
+#     name = "sources",
+#     module_name = "xcodeSample",
+#     srcs= glob(["**/*.swift"]),
+#     deps = ["//Pods/Alamofire"],
+#     copts = [ "-DBAZELBUILD"]
+# )
 
 ios_application(
     name = "xcodeSample",

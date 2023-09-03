@@ -13,8 +13,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Bazel 
 
+### Bazelpods Initialisation
+bazel run @bazelpods//:bazelpods -- --src $PWD
+
 ### Building 
 ❯ bazel build //xcodeSample:xcodeSample
 
 ### Running
 ❯ bazel run //xcodeSample:xcodeSample
+
+
+## Reset
+bazel clean --expunge
