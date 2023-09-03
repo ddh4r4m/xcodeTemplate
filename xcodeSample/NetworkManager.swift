@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import FBSDKShareKit
 
 final class NetworkManager {
     static let shared = NetworkManager()

@@ -40,11 +40,11 @@ class ViewController: UIViewController {
     }
     
     private func fetchDataFromAPI() {
-        NetworkManager.shared.fetchDataFromAPIUsingURLSession { [weak self] response in
+        NetworkManager.shared.fetchDataFromAPI { [weak self] response in
             switch response {
             case .success(let data):
                 self?.tableViewData = data
-            case .failure(let failure):
+            case .failure:
                 break
             }
             DispatchQueue.main.async {

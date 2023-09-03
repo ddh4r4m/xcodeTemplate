@@ -7,6 +7,8 @@ target 'xcodeSample' do
 
   # Pods for xcodeSample
   pod 'Alamofire'
+  pod 'FBSDKShareKit', '12.0.0'
+#  pod 'FirebaseCrashlytics',
 
 end
 

@@ -29,7 +29,7 @@ swift_library(
         "*.lproj/**/*",
     ]),
     module_name = "xcodeSample",
-    deps = ["//Pods/Alamofire"],
+    deps = ["//Pods/Alamofire", "//Pods/FBSDKShareKit"],
     tags = ["manual"],
     visibility = ["//visibility:public"],
 )
