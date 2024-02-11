@@ -6,5 +6,6 @@ target 'xcodeSample' do
   use_frameworks!
 
   # Pods for xcodeSample
-
+  pod 'Alamofire', '~> 5.4'
+  pod 'SnapKit', '~> 5.0.1'
 end
